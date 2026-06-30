@@ -1,0 +1,238 @@
+{
+    "lauk_sayur": [
+        {
+            "nama": "Dada ayam goreng (dengan kulit)",
+            "satuan": "100 gram",
+            "kalori": 216
+        },
+        {
+            "nama": "Dada ayam goreng (tanpa kulit)",
+            "satuan": "100 gram",
+            "kalori": 184
+        },
+        {
+            "nama": "Bebek goreng",
+            "satuan": "100 gram",
+            "kalori": 286
+        },
+        {
+            "nama": "Ikan kembung",
+            "satuan": "100 gram",
+            "kalori": 167
+        },
+        {
+            "nama": "Ikan lele goreng",
+            "satuan": "100 gram",
+            "kalori": 105
+        },
+        {
+            "nama": "Ikan salmon panggang",
+            "satuan": "100 gram",
+            "kalori": 171
+        },
+        {
+            "nama": "Udang goreng tepung",
+            "satuan": "100 gram",
+            "kalori": 150
+        },
+        {
+            "nama": "Bakso sapi",
+            "satuan": "100 gram",
+            "kalori": 202
+        },
+        {
+            "nama": "Chicken nugget",
+            "satuan": "100 gram",
+            "kalori": 297
+        },
+        {
+            "nama": "Telur orak arik",
+            "satuan": "2 btr telur sedang",
+            "kalori": 199
+        },
+        {
+            "nama": "Telur rebus",
+            "satuan": "1 btr sedang",
+            "kalori": 68
+        },
+        {
+            "nama": "Telur dadar",
+            "satuan": "1 btr besar",
+            "kalori": 93
+        },
+        {
+            "nama": "Telur ceplok",
+            "satuan": "1 btr besar",
+            "kalori": 92
+        },
+        {
+            "nama": "Tempe goreng",
+            "satuan": "1 porsi",
+            "kalori": 118
+        },
+        {
+            "nama": "Tempe bacem",
+            "satuan": "1 porsi",
+            "kalori": 157
+        },
+        {
+            "nama": "Tahu bacem",
+            "satuan": "1 porsi",
+            "kalori": 119
+        },
+        {
+            "nama": "Tahu isi",
+            "satuan": "1 porsi",
+            "kalori": 124
+        },
+        {
+            "nama": "Tahu bakso",
+            "satuan": "1 porsi",
+            "kalori": 119
+        },
+        {
+            "nama": "Tahu sumedang",
+            "satuan": "1 porsi",
+            "kalori": 113
+        },
+        {
+            "nama": "Tumis labu siam",
+            "satuan": "100 gram",
+            "kalori": 106
+        },
+        {
+            "nama": "Tumis kangkung",
+            "satuan": "85 gram",
+            "kalori": 155
+        },
+        {
+            "nama": "Tumis kacang panjang dan tempe",
+            "satuan": "110 gram",
+            "kalori": 102
+        },
+        {
+            "nama": "Sambal goreng kentang",
+            "satuan": "100 gram",
+            "kalori": 107
+        },
+        {
+            "nama": "Perkedel kentang",
+            "satuan": "75 gram",
+            "kalori": 117
+        }
+    ],
+    "makanan_pokok": [
+        {
+            "nama": "Nasi putih",
+            "satuan": "100 gram",
+            "kalori": 175
+        },
+        {
+            "nama": "Nasi merah",
+            "satuan": "100 gram",
+            "kalori": 110
+        },
+        {
+            "nama": "Kentang rebus",
+            "satuan": "100 gram",
+            "kalori": 87
+        },
+        {
+            "nama": "Ubi jalar",
+            "satuan": "100 gram",
+            "kalori": 86
+        },
+        {
+            "nama": "Singkong",
+            "satuan": "100 gram",
+            "kalori": 160
+        },
+        {
+            "nama": "Roti putih",
+            "satuan": "1 iris",
+            "kalori": 66
+        },
+        {
+            "nama": "Roti gandum",
+            "satuan": "1 iris",
+            "kalori": 67
+        },
+        {
+            "nama": "Mi goreng instan",
+            "satuan": "80 gram",
+            "kalori": 350
+        }
+    ],
+    "buah_buahan": [
+        {
+            "nama": "Apel",
+            "satuan": "1 buah sedang",
+            "kalori": 72
+        },
+        {
+            "nama": "Pisang",
+            "satuan": "1 buah sedang",
+            "kalori": 105
+        },
+        {
+            "nama": "Jambu biji",
+            "satuan": "1 buah",
+            "kalori": 37
+        },
+        {
+            "nama": "Jambu air",
+            "satuan": "1 buah",
+            "kalori": 55
+        },
+        {
+            "nama": "Semangka",
+            "satuan": "100 gram",
+            "kalori": 30
+        },
+        {
+            "nama": "Melon",
+            "satuan": "100 gram",
+            "kalori": 34
+        },
+        {
+            "nama": "Alpukat",
+            "satuan": "100 gram",
+            "kalori": 322
+        },
+        {
+            "nama": "Anggur",
+            "satuan": "100 gram",
+            "kalori": 69
+        },
+        {
+            "nama": "Jeruk",
+            "satuan": "1 buah",
+            "kalori": 62
+        },
+        {
+            "nama": "Salak",
+            "satuan": "1 buah",
+            "kalori": 8
+        },
+        {
+            "nama": "Manggis",
+            "satuan": "100 gram",
+            "kalori": 73
+        },
+        {
+            "nama": "Mangga manalagi",
+            "satuan": "1 buah",
+            "kalori": 72
+        },
+        {
+            "nama": "Buah naga",
+            "satuan": "1 buah sedang",
+            "kalori": 50
+        },
+        {
+            "nama": "Pepaya",
+            "satuan": "100 gram",
+            "kalori": 39
+        }
+    ]
+}
