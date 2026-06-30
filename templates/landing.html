@@ -1,0 +1,448 @@
+<!-- templates/landing.html -->
+{% extends "base.html" %} {% block title %}Beranda - NutriSnap{% endblock %} {% block content %}
+        {% include 'includes/navbar.html' %}
+
+
+<section class="bg-white">
+    <!-- Hero Image -->
+<div id="beranda" class="relative h-svh w-full overflow-hidden flex items-center justify-center">
+    <div class="absolute inset-0 z-0">
+        <div class="bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" 
+             style="background-image: url('{{ url_for('static', filename='images/Header.png') }}');"></div>
+        <div class="bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" 
+             style="background-image: url('{{ url_for('static', filename='images/Header2.jpg') }}');"></div>
+        <div class="bg-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" 
+             style="background-image: url('{{ url_for('static', filename='images/Header3.jpg') }}');"></div>
+        
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 md:px-0">
+        <h2 class="text-4xl text-white font-bold mb-2">Kenali Makananmu, Wujudkan Hidup Sehat</h2>
+        <h6 class="text-white">Langkah kecil untuk pola makan lebih sehat dan gaya hidup yang lebih seimbang</h6>
+    </div>
+</div>
+<!-- Hero Image End -->
+    <!-- Video section -->
+    <section id="video" class="bg-white py-12 px-6 scroll-mt-20 md:scroll-mt-10">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 items-center mb-16">
+            <div class="p-6 flex flex-col items-start text-left">
+                <h3 class="text-xl font-semibold mb-4 text-[#C84C05]">Apa Itu Pola Hidup Sehat?</h3>
+                <p class="text-gray-600 mb-6">Pola hidup sehat dimulai dari pilihan makan yang tepat. NutriSnap bantu kenali makanan agar asupan harian lebih bijak</p>
+            </div>
+            <div class="p-6 flex flex-col items-center text-center">
+                <img src="{{ url_for('static', filename='images/Sayur.png') }}" alt="Sayur" class="w-100 h-100 mb-4" />
+            </div>
+            <div class="p-6 flex flex-col items-end text-right">
+                <h3 class="text-xl font-semibold mb-4 text-[#C84C05]">Manfaat Pola Makan Sehat</h3>
+                <p class="text-gray-600 mb-6">Pola makan seimbang bantu tubuh lebih bertenaga, kurangi risiko penyakit, dan tingkatkan kualitas hidup</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-[#55603F] mb-10">Tutorial & Inspirasi Sehat</h2>
+            
+            <div class="relative w-full max-w-[850px] mx-auto overflow-hidden"> 
+                <div id="sliderContainer" class="flex overflow-x-hidden snap-x snap-mandatory scroll-smooth cursor-grab select-none">
+                    
+                    <div class="video-slide w-full flex-shrink-0 snap-start snap-always flex justify-center items-center">
+                        <div class="relative w-[90%] md:w-full aspect-video bg-black rounded-none overflow-hidden border-none shadow-none max-h-[70vh]">
+                            <video class="w-full h-full object-contain bg-black custom-video" controls loop playsinline>
+                                <source src="{{ url_for('static', filename='videos/tutorial1.mp4') }}" type="video/mp4">
+                            </video>
+                            <div class="absolute top-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-b from-black/70 to-transparent pointer-events-none text-left">
+                                <h3 class="text-white font-bold text-base md:text-xl drop-shadow-md">Resep Makanan Sehat</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-slide w-full flex-shrink-0 snap-start snap-always flex justify-center items-center">
+                        <div class="relative w-[90%] md:w-full aspect-video bg-black rounded-none overflow-hidden border-none shadow-none max-h-[70vh]">
+                            <video class="w-full h-full object-contain bg-black custom-video" controls loop playsinline>
+                                <source src="{{ url_for('static', filename='videos/tutorial2.mp4') }}" type="video/mp4">
+                            </video>
+                            <div class="absolute top-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-b from-black/70 to-transparent pointer-events-none text-left">
+                                <h3 class="text-white font-bold text-base md:text-xl drop-shadow-md">Resep Smoothie Sehat</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="dotsContainer" class="flex justify-center gap-2 md:gap-3 mt-8"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Artikel  section -->
+<section id="artikel" class="bg-white py-12 px-6 scroll-mt-20 md:scroll-mt-10">
+    <div class="container mx-auto max-w-4xl"> <!-- max-w-4xl supaya artikel tidak terlalu lebar ke samping -->
+        <h2 class="text-3xl font-bold text-center mb-4 text-[#55603F]">Artikel Kesehatan</h2>
+        <p class="text-lg text-center mb-10 text-[#626F47]">Dapatkan informasi kesehatan terbaru dan tips untuk hidup lebih sehat.</p>
+
+        <!-- Container Vertikal -->
+        <div class="flex flex-col gap-6">
+            
+            <!-- Card Artikel 1 (Dengan Dropdown) -->
+            <div class="bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <details class="group">
+                    <!-- Judul & Sumber -->
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="pr-4">
+                            <p class="text-sm text-[#C84C05] font-semibold mb-1">Sumber: Halodoc</p>
+                            <a href="https://www.halodoc.com/artikel/7-tips-menerapkan-pola-makan-sehat-yang-mudah-dilakukan?srsltid=AfmBOoqmW7vkeNJBXD8WGGRnsXvx6la09u1bwmBz5v5L0707qu_qI2Ap" 
+                            target="_blank" 
+                            class="text-[10px] md:text-xs text-gray-400 hover:text-[#C84C05] transition-colors mb-2 block truncate max-w-[250px] md:max-w-full">
+                            https://www.halodoc.com/artikel/7-tips-menerapkan-pola-makan-sehat-yang-mudah-dilakukan
+                        </a>
+                            <h3 class="text-xl md:text-2xl font-bold text-[#626F47]">7 Tips Menerapkan Pola Makan Sehat yang Mudah Dilakukan</h3>
+                        </div>
+                        <!-- Icon Panah -->
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" class="text-[#C84C05]"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+
+                    <!-- Isi Artikel (Akan muncul saat di-klik) -->
+                    <div class="px-6 pb-8 text-gray-700 leading-relaxed border-t border-gray-100 pt-6">
+                        <p class="font-bold text-[#C84C05] mb-4">Tips Menerapkan Pola Makan Sehat</p>
+                        <p class="mb-4">Sederhananya, pola makan yang sehat adalah salah satu kebiasaan hidup sehat yang bisa kamu lakukan dengan mengonsumsi lemak sehat dan menghindari asupan lemak jenuh. Selain itu, kamu juga perlu memperbanyak asupan serat dari sayuran, buah, dan/atau gandum utuh.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">1. Sarapan adalah hal yang utama dalam pola makan sehat</h4>
+                                <p>Sarapan menjadi prinsip utama dalam menjaga pola makan sehat. Aktivitas ini penting untuk memenuhi kebutuhan energi saat beraktivitas.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">2. Selipkan sayuran dalam menu makan</h4>
+                                <p>Sayuran kaya akan serat dan vitamin. Idealnya, konsumsi 5 porsi sayuran dan buah setiap harinya.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">3. Pilih camilan tinggi protein</h4>
+                                <p>Camilan tinggi protein membuat kenyang lebih lama. Contoh: telur rebus, Greek yoghurt, atau kacang-kacangan.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">4. Penuhi cairan tubuh</h4>
+                                <p>Minum air putih membantu terhindar dari dehidrasi dan menjaga fokus serta energi tubuh.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">5. Buat menu mingguan dan jurnal makan</h4>
+                                <p>Membuat rencana menu membantu mengontrol asupan kalori dan mencegah konsumsi makanan tidak sehat.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">6. Menentukan porsi makan</h4>
+                                <p>Hindari menunda makan agar tidak makan berlebihan. Gunakan porsi yang tepat untuk menjaga berat badan.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#626F47]">7. Makan pada waktu yang tepat</h4>
+                                <p>Berikan jeda antar waktu makan agar metabolisme lancar. Hindari makan berat sesaat sebelum tidur.</p>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-6 italic text-sm text-gray-500">Supaya bisa mendapatkan hasil yang optimal, kamu tentunya perlu disiplin dan konsisten dalam melakukan kebiasaan baik ini.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Card Artikel 2 (Bisa kamu isi dengan konten Kemenkes) -->
+            
+        <div class="bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+            <details class="group">
+                <!-- Judul & Sumber -->
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <div class="pr-4">
+                        <p class="text-sm text-[#C84C05] font-semibold mb-1">Sumber: Kementrian Kesehatan</p>
+                        <a href="https://keslan.kemkes.go.id/view_artikel/4046/mengelola-pola-makan-sehat-di-tengah-rutinitas-sibuk" 
+                            target="_blank" 
+                            class="text-[10px] md:text-xs text-gray-400 hover:text-[#C84C05] transition-colors mb-2 block truncate max-w-[250px] md:max-w-full">
+                            https://keslan.kemkes.go.id/view_artikel/4046/mengelola-pola-makan-sehat-di-tengah-rutinitas-sibuk
+                        </a>
+                        <h3 class="text-xl md:text-2xl font-bold text-[#626F47]">Mengelola Pola Makan Sehat di Tengah Rutinitas Sibuk</h3>
+                    </div>
+                    <!-- Icon Panah -->
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" class="text-[#C84C05]"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+
+                <!-- Isi Artikel (Dropdown) -->
+                <div class="px-6 pb-8 text-gray-700 leading-relaxed border-t border-gray-100 pt-6">
+                    <p class="mb-4">Kondisi sibuk sering dialami karyawan perkantoran di kota besar. Pekerjaan dan tanggung jawab keluarga sering mengakibatkan kurangnya perhatian terhadap pola makan. Padahal, pola makan yang tidak tepat bisa menyebabkan masalah pencernaan dan meningkatkan risiko penyakit.</p>
+                    
+                    <div class="space-y-6">
+                        <!-- Bagian Pentingnya Pola Makan -->
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-[#626F47] mb-2">Manfaat Pola Makan Sehat:</h4>
+                            <ul class="list-disc ml-5 space-y-1">
+                                <li>Meningkatkan Energi untuk aktivitas sehari-hari.</li>
+                                <li>Meningkatkan Fokus dan Produktivitas kerja.</li>
+                                <li>Mencegah Penyakit kronis (diabetes, jantung, obesitas).</li>
+                            </ul>
+                        </div>
+
+                        <!-- Strategi Mengelola Pola Makan -->
+                        <div>
+                            <h4 class="font-bold text-[#C84C05] text-lg mb-3">Strategi di Tengah Kesibukan:</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border-l-4 border-[#C84C05] pl-4">
+                                    <p class="font-bold">Meal Planning & Prep</p>
+                                    <p class="text-sm">Siapkan menu mingguan dan potong bahan makanan di akhir pekan agar hari kerja lebih efisien.</p>
+                                </div>
+                                <div class="border-l-4 border-[#C84C05] pl-4">
+                                    <p class="font-bold">Camilan Sehat</p>
+                                    <p class="text-sm">Pilih buah segar, kacang-kacangan, atau yogurt daripada makanan cepat saji.</p>
+                                </div>
+                                <div class="border-l-4 border-[#C84C05] pl-4">
+                                    <p class="font-bold">Atur Waktu Makan</p>
+                                    <p class="text-sm">Gunakan pengingat/alarm untuk jadwal makan teratur dan hindari makan sambil bekerja.</p>
+                                </div>
+                                <div class="border-l-4 border-[#C84C05] pl-4">
+                                    <p class="font-bold">Gunakan Teknologi</p>
+                                    <p class="text-sm">Manfaatkan aplikasi pencatat kalori dan nutrisi untuk memantau asupan harian.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tips Praktis -->
+                        <div>
+                            <h4 class="font-bold text-[#626F47] text-lg mb-3">Tips Mempertahankan Pola Makan:</h4>
+                            <ul class="space-y-3">
+                                <li><strong class="text-[#C84C05]">1. Jangan Lewatkan Sarapan:</strong> Gunakan karbohidrat kompleks (oatmeal/nasi merah) dan protein.</li>
+                                <li><strong class="text-[#C84C05]">2. Batasi Kopi:</strong> Cukup 1-2 cangkir sehari tanpa krimer/topping berlebih untuk cegah dehidrasi.</li>
+                                <li><strong class="text-[#C84C05]">3. Perbanyak Air Putih:</strong> Minimal 8 gelas sehari agar fungsi tubuh lancar dan metabolisme terjaga.</li>
+                                <li><strong class="text-[#C84C05]">4. Makanan Alami:</strong> Pilih bahan segar daripada makanan kemasan yang tinggi gula dan natrium.</li>
+                                <li><strong class="text-[#C84C05]">5. Berhenti Sebelum Kenyang:</strong> Makan secukupnya (sekitar 80% rasa kenyang) agar pencernaan tidak terganggu.</li>
+                                <li><strong class="text-[#C84C05]">6. Pola Teratur:</strong> Hindari makan terlalu larut malam karena metabolisme tubuh melambat.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="mt-6 text-sm font-medium text-gray-500 text-center italic">"Menjaga pola makan sehat adalah investasi jangka panjang bagi kesehatan fisik dan mental."</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- CARD 3: 10 Langkah Memulai Pola Hidup Sehat (RS Siloam) -->
+        <div class="bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+            <details class="group">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <div class="pr-4 text-left">
+                        <p class="text-sm text-[#C84C05] font-semibold mb-1">Sumber: RS Siloam</p>
+                        <a href="https://www.siloamhospitals.com/informasi-siloam/artikel/pola-hidup-sehat" 
+                            target="_blank" 
+                            class="text-[10px] md:text-xs text-gray-400 hover:text-[#C84C05] transition-colors mb-2 block truncate max-w-[250px] md:max-w-full">
+                            https://www.siloamhospitals.com/informasi-siloam/artikel/pola-hidup-sehat
+                        </a>
+                        <h3 class="text-xl md:text-2xl font-bold text-[#626F47]">10 Langkah Mudah Memulai Pola Hidup Sehat Sehari-Hari</h3>
+                    </div>
+                    <span class="transition group-open:rotate-180">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" class="text-[#C84C05]"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+
+                <div class="px-6 pb-8 text-gray-700 leading-relaxed border-t border-gray-100 pt-6 text-left">
+                    <p class="mb-6">Menerapkan pola hidup sehat dan menjaga perasaan bahagia adalah kunci utama panjang umur. Manfaatnya sangat berpengaruh pada kesehatan tubuh serta pikiran yang positif. Kamu bisa memulainya melalui langkah sederhana berikut ini:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Kolom Kiri: Poin 01 - 05 -->
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">01.</span>
+                                <p class="text-sm"><strong>Olahraga Rutin:</strong> Minimal 30 menit/hari untuk membakar kalori dan melancarkan oksigen.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">02.</span>
+                                <p class="text-sm"><strong>Makanan Sehat:</strong> Perbanyak sayur dan buah, serta usahakan memasak sendiri untuk menjamin kebersihan.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">03.</span>
+                                <p class="text-sm"><strong>Cukupi Cairan:</strong> Minum 2 liter air putih per hari untuk mencegah dehidrasi dan menjaga berat badan.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">04.</span>
+                                <p class="text-sm"><strong>Kelola Stres:</strong> Jaga kesehatan mental melalui hobi agar pikiran tetap rileks dan positif.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">05.</span>
+                                <p class="text-sm"><strong>Tidur Cukup:</strong> Istirahat 7-9 jam setiap malam dengan jadwal yang konsisten untuk menjaga kebugaran.</p>
+                            </div>
+                        </div>
+                        <!-- Kolom Kanan: Poin 06 - 10 -->
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">06.</span>
+                                <p class="text-sm"><strong>Kurangi Gula/Garam:</strong> Langkah penting untuk menurunkan risiko diabetes dan penyakit hipertensi.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">07.</span>
+                                <p class="text-sm"><strong>Kebersihan Rumah:</strong> Pastikan ventilasi udara memadai agar kuman penyakit tidak berkembang cepat.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">08.</span>
+                                <p class="text-sm"><strong>Hindari Rokok/Alkohol:</strong> Melindungi organ paru & jantung serta kesehatan mental jangka panjang.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">09.</span>
+                                <p class="text-sm"><strong>Rajin Cuci Tangan:</strong> Menjaga kebersihan tangan membantu mencegah penyebaran infeksi bakteri dan virus.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="font-bold text-[#C84C05]">10.</span>
+                                <p class="text-sm"><strong>Cek Kesehatan:</strong> Deteksi dini kondisi tubuh secara rutin agar segera mendapat penanganan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Artikel kesehatan v2 End section -->
+
+        <!-- Pentingnya Menjaga Asupan Kalori section -->
+        <section id="kalori" class="mt-10 scroll-mt-20 md:scroll-mt-24">
+            <div class="w-full mx-auto text-center">
+                <div class="gap-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-[#55603F]">Menjaga Asupan Kalori</h2>
+                <p class="text-lg text-center mb-20 text-[#626F47]">Jagalah asupan kalori dalam tubuh anda demi meningkatkan kualitas hidup anda</p>
+
+                <div class="relative bg-yellow-100 py-12 rounded-lg overflow-visible">
+                    <div class="grid grid-cols-1 md:grid-cols-3 items-start justify-items-center px-4 -mt-20">
+                        <!-- Card 1 -->
+                        <div class="flex flex-col items-center text-center mb-10">
+                            <img src="/static/images/lauk_sayur.png" alt="Lauk dan Sayur" class="w-40 h-40 object-cover rounded-full shadow-md mb-4" />
+                            <h3 class="font-semibold text-green-900 mb-2">Daftar Kalori Lauk dan Sayur</h3>
+                            <a href="/kalori?kategori=lauk_sayur" class="bg-[#C84C05] hover:bg-[#933804] text-white font-semibold py-2 px-4 rounded-full transition duration-300">Selengkapnya</a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flex flex-col items-center text-center mb-10">
+                            <img src="/static/images/makanan_pokok.png" alt="Makanan Pokok" class="w-40 h-40 object-cover rounded-full shadow-md mb-4" />
+                            <h3 class="font-semibold text-green-900 mb-2">Daftar Kalori Makanan Pokok</h3>
+                            <a href="/kalori?kategori=makanan_pokok" class="bg-[#C84C05] hover:bg-[#933804] text-white font-semibold py-2 px-4 rounded-full transition duration-300">Selengkapnya</a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex flex-col items-center text-center mb-10">
+                            <img src="/static/images/buah_buah.png" alt="Buah-Buahan" class="w-40 h-40 object-cover rounded-full shadow-md mb-4" />
+                            <h3 class="font-semibold text-green-900 mb-2">Daftar Kalori Buah-Buah</h3>
+                            <a href="/kalori?kategori=buah_buahan" class="bg-[#C84C05] hover:bg-[#933804] text-white font-semibold py-2 px-4 rounded-full transition duration-300">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- sc untuk slide -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('sliderContainer');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const slides = slider.querySelectorAll('.video-slide'); 
+    const videos = document.querySelectorAll('.custom-video');
+
+    dotsContainer.innerHTML = '';
+
+    // 1. GENERATE DOTS INDIKATOR OTOMATIS
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        if (i === 0) {
+            dot.className = `dot-item h-3 w-8 rounded-full bg-[#C84C05] cursor-pointer transition-all duration-300`;
+        } else {
+            dot.className = `dot-item h-3 w-3 rounded-full bg-gray-300 cursor-pointer transition-all duration-300`;
+        }
+        
+        dot.addEventListener('click', () => {
+            slider.scrollTo({ left: slider.clientWidth * i, behavior: 'smooth' });
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    // FUNGSI UPDATE DOTS + OTOMATIS PAUSE VIDEO SEBELUMNYA
+    const updateDots = () => {
+        const index = Math.round(slider.scrollLeft / slider.clientWidth);
+        const dots = dotsContainer.querySelectorAll('.dot-item');
+        
+        // Atur ukuran dan warna dot aktif via classList Tailwind
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.remove('w-3', 'bg-gray-300');
+                dot.classList.add('w-8', 'bg-[#C84C05]');
+            } else {
+                dot.classList.remove('w-8', 'bg-[#C84C05]');
+                dot.classList.add('w-3', 'bg-gray-300');
+            }
+        });
+
+        // Mematikan video yang ditinggalkan agar suaranya tidak tabrakan
+        videos.forEach((video, i) => {
+            if (i !== index) {
+                video.pause(); 
+            }
+        });
+    };
+
+    // 2. LOGIKA MOUSE DRAG & TOUCH SLIDER
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const startAction = (e) => {
+        isDown = true;
+        slider.style.scrollBehavior = 'auto';
+        startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    };
+
+    const endAction = () => {
+        isDown = false;
+        slider.style.scrollBehavior = 'smooth';
+        const index = Math.round(slider.scrollLeft / slider.clientWidth);
+        slider.scrollTo({ left: index * slider.clientWidth, behavior: 'smooth' });
+    };
+
+    const moveAction = (e) => {
+        if (!isDown) return;
+        const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+        updateDots();
+    };
+
+    // Integrasi Event Slider
+    slider.addEventListener('mousedown', startAction);
+    slider.addEventListener('mouseup', endAction);
+    slider.addEventListener('mouseleave', endAction);
+    slider.addEventListener('mousemove', moveAction);
+
+    slider.addEventListener('touchstart', startAction, {passive: true});
+    slider.addEventListener('touchend', endAction);
+    slider.addEventListener('touchmove', moveAction, {passive: true});
+
+    slider.addEventListener('scroll', updateDots);
+});
+
+// LOGIKA TAMBAHAN: Slideshow Background Gambar Beranda (Header)
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.bg-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+    }
+    setInterval(nextSlide, 3000); // Ganti gambar beranda otomatis tiap 5 detik
+});
+</script>
+        <!--  Pentingnya Menjaga Asupan Kalori end section -->
+        {% endblock %}
+    </section>
+</section>
